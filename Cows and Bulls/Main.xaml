@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="390,831" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1354,645" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -51,7 +51,6 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -70,7 +69,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 303.3,107.5 303.3,127.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID3" DisplayName="Generate Random Number" sap:VirtualizedContainerService.HintSize="464,2020" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID3" DisplayName="Generate Random Number" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
           <Sequence sap:VirtualizedContainerService.HintSize="418,1188" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
@@ -144,33 +143,33 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID0" DisplayName="Guess Number" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_3">
+              <State x:Name="__ReferenceID0" DisplayName="Guess Number" sap:VirtualizedContainerService.HintSize="1178,5313" sap2010:WorkflowViewState.IdRef="State_3">
                 <State.Entry>
-                  <Sequence sap:VirtualizedContainerService.HintSize="989,5617" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence sap:VirtualizedContainerService.HintSize="1132,4899" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:Comment sap:VirtualizedContainerService.HintSize="947,93" sap2010:WorkflowViewState.IdRef="Comment_4" Text="The input dialog retrieves guess input from user and is converted to string as listed in the variable section." />
-                    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="947,92" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Guess any 4 digit number between 0000 and 9999." Title="Enter the number">
+                    <ui:Comment sap:VirtualizedContainerService.HintSize="1090,93" sap2010:WorkflowViewState.IdRef="Comment_4" Text="The input dialog retrieves guess input from user and is converted to string as listed in the variable section." />
+                    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1090,92" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Guess any 4 digit number between 0000 and 9999." Title="Enter the number">
                       <ui:InputDialog.Result>
                         <OutArgument x:TypeArguments="x:String">[GuessNumber]</OutArgument>
                       </ui:InputDialog.Result>
                     </ui:InputDialog>
-                    <ui:Comment sap:VirtualizedContainerService.HintSize="947,189" sap2010:WorkflowViewState.IdRef="Comment_5" Text="Check that the string includes only integers and the length of string input is 4. If it is not exactly 4 or consists of not only integers, tell user via message that the user should try again.&#xA;&#xA;If the format is correct, proceed with sequence." />
-                    <If Condition="[GuessNumber.Length = 4 AndAlso GuessNumber.All(Function(x) char.IsDigit(x))]" sap:VirtualizedContainerService.HintSize="947,5031" sap2010:WorkflowViewState.IdRef="If_31">
+                    <ui:Comment sap:VirtualizedContainerService.HintSize="1090,189" sap2010:WorkflowViewState.IdRef="Comment_5" Text="Check that the string includes only integers and the length of string input is 4. If it is not exactly 4 or consists of not only integers, tell user via message that the user should try again.&#xA;&#xA;If the format is correct, proceed with sequence." />
+                    <If Condition="[GuessNumber.Length = 4 AndAlso GuessNumber.All(Function(x) char.IsDigit(x))]" sap:VirtualizedContainerService.HintSize="1090,4313" sap2010:WorkflowViewState.IdRef="If_31">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="526,4883" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <Sequence sap:VirtualizedContainerService.HintSize="669,4165" sap2010:WorkflowViewState.IdRef="Sequence_11">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="484,93" sap2010:WorkflowViewState.IdRef="Comment_6" Text="After the guess is made, the guess (string) has to be checked against the random number (string) to provide feedback to the user. " />
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="Comment_7" Text="Prior to starting the entire checking process, create integer variables, tries, n and p to track the number of tries the user has made, the number of correct digits that are in the wrong position and the number of correct digits that are in the right position respectively. &#xA;&#xA;Initiate the variable tries to 10 as the user has 10 tries and, n and p to 0." />
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="484,74" sap2010:WorkflowViewState.IdRef="Comment_8" Text="For every time the user guesses, minus 1 from tries." />
-                          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="627,93" sap2010:WorkflowViewState.IdRef="Comment_6" Text="After the guess is made, the guess (string) has to be checked against the random number (string) to provide feedback to the user. " />
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="627,208" sap2010:WorkflowViewState.IdRef="Comment_7" Text="Prior to starting the entire checking process, create integer variables, tries, n and p to track the number of tries the user has made, the number of correct digits that are in the wrong position and the number of correct digits that are in the right position respectively. &#xA;&#xA;Initiate the variable tries to 10 as the user has 10 tries and, n and p to 0." />
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="627,74" sap2010:WorkflowViewState.IdRef="Comment_8" Text="For every time the user guesses, minus 1 from tries." />
+                          <Assign sap:VirtualizedContainerService.HintSize="627,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[tries]</OutArgument>
                             </Assign.To>
@@ -178,7 +177,7 @@
                               <InArgument x:TypeArguments="x:Int32">[tries - 1]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                          <Assign sap:VirtualizedContainerService.HintSize="627,60" sap2010:WorkflowViewState.IdRef="Assign_21">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[p]</OutArgument>
                             </Assign.To>
@@ -186,7 +185,7 @@
                               <InArgument x:TypeArguments="x:Int32">0</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                          <Assign sap:VirtualizedContainerService.HintSize="627,60" sap2010:WorkflowViewState.IdRef="Assign_28">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[n]</OutArgument>
                             </Assign.To>
@@ -194,147 +193,122 @@
                               <InArgument x:TypeArguments="x:Int32">0</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="484,131" sap2010:WorkflowViewState.IdRef="Comment_9" Text="nodouble is a list that receives string characters from the guess that is in the correct position as the random number. This list helps to prevent duplicates during the checking process." />
-                          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="627,131" sap2010:WorkflowViewState.IdRef="Comment_9" Text="Leftovers is a list that receives string characters from the RandomNumber generated that is not in the correct position as the random number. This list tells me the numbers that the user has missed." />
+                          <Assign sap:VirtualizedContainerService.HintSize="627,60" sap2010:WorkflowViewState.IdRef="Assign_41">
                             <Assign.To>
-                              <OutArgument x:TypeArguments="scg:List(x:String)">[nodouble]</OutArgument>
+                              <OutArgument x:TypeArguments="scg:List(x:String)">[Leftover]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="484,227" sap2010:WorkflowViewState.IdRef="Comment_10" Text="Here, multiple IF statements are made. &#xA;&#xA;First, we check P, which is to check if the digits in the user's guess matches the random number by index. &#xA;&#xA;Since, there are 4 digits to check, we perform 4 iterations of this action. Mainly, if there is a match, add 1 to p variable and add the character to the list, nodouble." />
-                          <If Condition="[RandomNumber.Chars(0) = GuessNumber.Chars(0)]" sap:VirtualizedContainerService.HintSize="484,362" sap2010:WorkflowViewState.IdRef="If_9">
-                            <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="627,246" sap2010:WorkflowViewState.IdRef="Comment_10" Text="Here, 2 while loops are made. &#xA;&#xA;First, we check P, which is to check if the digits in the user's guess matches the random number by index. &#xA;&#xA;Since, there are 4 digits to check, we perform 4 iterations of this action. Mainly, if there is a match, add 1 to p variable. For the non-matches, we add the characters to the leftover collection." />
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="627,112" sap2010:WorkflowViewState.IdRef="Comment_18" Text="The count is to keep track of the number of iterations run. The while loop iterates for as many characters as the length of the RandomNumber and GuessNumber." />
+                          <Assign sap:VirtualizedContainerService.HintSize="627,60" sap2010:WorkflowViewState.IdRef="Assign_42">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="627,656" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                            <ui:InterruptibleWhile.Body>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="591,491" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                <If Condition="[RandomNumber.Chars(count) = GuessNumber.Chars(count)]" sap:VirtualizedContainerService.HintSize="549,299" sap2010:WorkflowViewState.IdRef="If_9">
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[p]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[p + 1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <AddToCollection x:TypeArguments="x:String" Collection="[Leftover]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[RandomNumber.Chars(count).ToString]" />
+                                  </If.Else>
+                                </If>
+                                <Assign sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_43">
                                   <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Int32">[p]</OutArgument>
+                                    <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Int32">[p + 1]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <AddToCollection x:TypeArguments="x:String" Collection="[nodouble]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[GuessNumber.Chars(0).ToString]" />
                               </Sequence>
-                            </If.Then>
-                          </If>
-                          <If Condition="[RandomNumber.Chars(1) = GuessNumber.Chars(1)]" sap:VirtualizedContainerService.HintSize="484,362" sap2010:WorkflowViewState.IdRef="If_15">
-                            <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            </ui:InterruptibleWhile.Body>
+                            <ui:InterruptibleWhile.Condition>
+                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="count&lt;((RandomNumber.Length+GuessNumber.Length)/2)" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+                            </ui:InterruptibleWhile.Condition>
+                          </ui:InterruptibleWhile>
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="627,495" sap2010:WorkflowViewState.IdRef="Comment_11" Text="After checking P and filling the list, Leftover, with the non-matching characters, check for N.&#xA;&#xA;N is the number of correct digits that are in the wrong position.&#xA;&#xA;To check for N, there are two conditions. &#xA;&#xA;First, the character in the guess number must not match the character in the random number. &#xA;&#xA;Second, the specific character in the random number must be in the leftover list.&#xA;&#xA;Also, to prevent duplicates, the character identified in step two will be removed from the leftover collection.&#xA;&#xA;If the two conditions are satisfied, add 1 to n. Likewise, we iterate for as many characters as the length of the GuessNumber and RandomNumber." />
+                          <Assign sap:VirtualizedContainerService.HintSize="627,60" sap2010:WorkflowViewState.IdRef="Assign_44">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[count1]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="627,718" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                            <ui:InterruptibleWhile.Body>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,553" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                <If Condition="[GuessNumber.Chars(count1) &lt;&gt; RandomNumber.Chars(count1) AndAlso Leftover.Contains(GuessNumber.Chars(count1))]" sap:VirtualizedContainerService.HintSize="484,361" sap2010:WorkflowViewState.IdRef="If_24">
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[n]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[n+1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <RemoveFromCollection x:TypeArguments="x:String" Collection="[Leftover]" DisplayName="Remove From Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_1" Item="[GuessNumber.Chars(count1)]" />
+                                    </Sequence>
+                                  </If.Then>
+                                </If>
+                                <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_45">
                                   <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Int32">[p]</OutArgument>
+                                    <OutArgument x:TypeArguments="x:Int32">[count1]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Int32">[p + 1]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32">[count1+1]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <AddToCollection x:TypeArguments="x:String" Collection="[nodouble]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[GuessNumber.Chars(1).ToString]" />
                               </Sequence>
-                            </If.Then>
-                          </If>
-                          <If Condition="[RandomNumber.Chars(2) = GuessNumber.Chars(2)]" sap:VirtualizedContainerService.HintSize="484,362" sap2010:WorkflowViewState.IdRef="If_14">
-                            <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Int32">[p]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Int32">[p + 1]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                                <AddToCollection x:TypeArguments="x:String" Collection="[nodouble]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[GuessNumber.Chars(2).ToString]" />
-                              </Sequence>
-                            </If.Then>
-                          </If>
-                          <If Condition="[RandomNumber.Chars(3) = GuessNumber.Chars(3)]" sap:VirtualizedContainerService.HintSize="484,362" sap2010:WorkflowViewState.IdRef="If_13">
-                            <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_27">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Int32">[p]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Int32">[p + 1]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                                <AddToCollection x:TypeArguments="x:String" Collection="[nodouble]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[GuessNumber.Chars(3).ToString]" />
-                              </Sequence>
-                            </If.Then>
-                          </If>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="484,438" sap2010:WorkflowViewState.IdRef="Comment_11" Text="After checking P and filling the list, nodouble, with the matching characters, check for N.&#xA;&#xA;N is the number of correct digits that are in the wrong position.&#xA;&#xA;To check for N, there are three conditions. &#xA;&#xA;First, the character in the guess number must not match the character in the random number. &#xA;&#xA;Second, the specific character in the random number must be in the guess number.&#xA;&#xA;Last, to prevent duplicates, the character identified in step two must not be in the list, nodouble.&#xA;&#xA;If the three conditions are satisfied, add 1 to n." />
-                          <If Condition="[GuessNumber.Chars(0) &lt;&gt; RandomNumber.Chars(0) AndAlso GuessNumber.Contains(RandomNumber.Chars(0)) AndAlso Not nodouble.Contains(RandomNumber.Chars(0))]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_24">
-                            <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Int32">[n]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Int32">[n+1]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </If.Then>
-                          </If>
-                          <If Condition="[GuessNumber.Chars(1) &lt;&gt; RandomNumber.Chars(1) AndAlso GuessNumber.Contains(RandomNumber.Chars(1)) AndAlso Not nodouble.Contains(RandomNumber.Chars(1))]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_25">
-                            <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_38">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Int32">[n]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Int32">[n+1]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </If.Then>
-                          </If>
-                          <If Condition="[GuessNumber.Chars(2) &lt;&gt; RandomNumber.Chars(2) AndAlso GuessNumber.Contains(RandomNumber.Chars(2)) AndAlso Not nodouble.Contains(RandomNumber.Chars(2))]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_26">
-                            <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_39">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Int32">[n]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Int32">[n+1]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </If.Then>
-                          </If>
-                          <If Condition="[GuessNumber.Chars(3) &lt;&gt; RandomNumber.Chars(3) AndAlso GuessNumber.Contains(RandomNumber.Chars(3)) AndAlso Not nodouble.Contains(RandomNumber.Chars(3))]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_27">
-                            <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_40">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Int32">[n]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Int32">[n+1]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </If.Then>
-                          </If>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="484,132" sap2010:WorkflowViewState.IdRef="Comment_12" Text="If the guess matches the random number, i.e. 4P, proceed to the final stage. &#xA;&#xA;Else, inform the user via message about the performance of the guess and try again." />
-                          <If Condition="[GuessNumber = RandomNumber]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_35">
+                            </ui:InterruptibleWhile.Body>
+                            <ui:InterruptibleWhile.Condition>
+                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="count1&lt;((RandomNumber.Length+GuessNumber.Length)/2)" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_4" />
+                            </ui:InterruptibleWhile.Condition>
+                          </ui:InterruptibleWhile>
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="627,132" sap2010:WorkflowViewState.IdRef="Comment_12" Text="If the guess matches the random number, i.e. 4P, proceed to the final stage. &#xA;&#xA;Else, inform the user via message about the performance of the guess and try again." />
+                          <If Condition="[GuessNumber = RandomNumber]" sap:VirtualizedContainerService.HintSize="627,208" sap2010:WorkflowViewState.IdRef="If_35">
                             <If.Else>
                               <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_25" Text="[&quot;Your guess was &quot;+GuessNumber+&quot;. Result: &quot;+ n.ToString+&quot;N, &quot;+p.ToString+&quot;P  Tries left: &quot; +tries.ToString]" />
                             </If.Else>
@@ -467,7 +441,9 @@
                 <State.Variables>
                   <Variable x:TypeArguments="x:Int32" Default="0" Name="n" />
                   <Variable x:TypeArguments="x:Int32" Default="0" Name="p" />
-                  <Variable x:TypeArguments="scg:List(x:String)" Name="nodouble" />
+                  <Variable x:TypeArguments="scg:List(x:String)" Name="Leftover" />
+                  <Variable x:TypeArguments="x:Int32" Default="0" Name="count" />
+                  <Variable x:TypeArguments="x:Int32" Default="0" Name="count1" />
                 </State.Variables>
               </State>
             </Transition.To>
